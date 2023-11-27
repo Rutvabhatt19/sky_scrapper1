@@ -27,6 +27,30 @@ class Detailpagestate extends State<Detailpage> {
     return Consumer(
       builder: (context, ThemeModal themeModal, child) {
         return Scaffold(
+          appBar: AppBar(
+            automaticallyImplyLeading: false,
+            title: Text(
+              'Current Weather',
+              style: TextStyle(
+                color: themeModal.isDark ? Colors.white : Colors.black,
+              ),
+            ),
+            backgroundColor:
+                themeModal.isDark ? Color(0xffB06892) : Color(0xffbfcfd8),
+            actions: [
+              IconButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Settings(),
+                    ));
+                  },
+                  icon: Icon(
+                    Icons.settings,
+                    color: themeModal.isDark ? Colors.white : Colors.black,
+                    size: 30,
+                  )),
+            ],
+          ),
           backgroundColor:
               themeModal.isDark ? Color(0xffBD83C8) : Color(0xff60CDE4),
           body: FutureBuilder<void>(
@@ -45,60 +69,51 @@ class Detailpagestate extends State<Detailpage> {
                       bottom: true,
                       right: true,
                       top: true,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            children: [
-                              Text(
-                                '$a',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  color: themeModal.isDark
-                                      ? Colors.white
-                                      : Colors.black,
-                                ),
-                              ),
-                              Text(
-                                '${apIprovider.weatherDataModal.location.region}, ${apIprovider.weatherDataModal.location.country}',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  color: themeModal.isDark
-                                      ? Colors.white
-                                      : Colors.black,
-                                ),
-                              ),
-                            ],
-                          ),
-                          IconButton(
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => Settings(),
-                                ));
-                              },
-                              icon: Icon(
-                                Icons.settings,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 190, top: 30),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '$a',
+                              style: TextStyle(
+                                fontSize: 32,
                                 color: themeModal.isDark
                                     ? Colors.white
                                     : Colors.black,
-                                size: 30,
-                              )),
-                        ],
+                              ),
+                            ),
+                            Text(
+                              '${apIprovider.weatherDataModal.location.region}, ${apIprovider.weatherDataModal.location.country}',
+                              style: TextStyle(
+                                fontSize: 20,
+                                color: themeModal.isDark
+                                    ? Colors.white
+                                    : Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    Center(
-                        child: Text(
-                      '${apIprovider.weatherDataModal.current.tempC} C',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: themeModal.isDark ? Colors.white : Colors.black,
-                      ),
-                    )),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 30),
+                      child: Center(
+                          child: Text(
+                        '${apIprovider.weatherDataModal.current.tempC} °C',
+                        style: TextStyle(
+                          fontSize: 45,
+                          color:
+                              themeModal.isDark ? Colors.white : Colors.black,
+                        ),
+                      )),
+                    ),
                     Center(
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            '${apIprovider.weatherDataModal.current.condition.text} C',
+                            '${apIprovider.weatherDataModal.current.condition.text}',
                             style: TextStyle(
                               fontSize: 20,
                               color: themeModal.isDark
@@ -109,7 +124,7 @@ class Detailpagestate extends State<Detailpage> {
                           Padding(
                             padding: const EdgeInsets.only(left: 20),
                             child: Text(
-                              '${apIprovider.weatherDataModal.current.windDegree} C',
+                              '${apIprovider.weatherDataModal.current.cloud}',
                               style: TextStyle(
                                 fontSize: 20,
                                 color: themeModal.isDark
@@ -121,385 +136,413 @@ class Detailpagestate extends State<Detailpage> {
                         ],
                       ),
                     ),
-                    Table(
-                      children: [
-                        TableRow(children: [
-                          Text(
-                            'Date',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(top: 40, left: 10, right: 10),
+                      child: Table(
+                        children: [
+                          TableRow(children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'Date',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            'Day',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'Day',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            'Humidity',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'Sunrise',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            'Lowest Temp',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'Sunset',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            'Highest Temp',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                          ]),
+                          TableRow(children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '28/11',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                        ]),
-                        TableRow(children: [
-                          Text(
-                            '28/11',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'Tues',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            'Tommorow',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${apIprovider.weatherDataModal.forecast.forecastday[0].astro.sunrise}',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.avghumidity}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${apIprovider.weatherDataModal.forecast.forecastday[0].astro.sunset}',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.mintempC}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                          ]),
+                          TableRow(children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '29/11',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.maxtempC}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'Wed',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                        ]),
-                        TableRow(children: [
-                          Text(
-                            '29/11',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${apIprovider.weatherDataModal.forecast.forecastday[0].astro.sunrise}',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            'Wednesday',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${apIprovider.weatherDataModal.forecast.forecastday[0].astro.sunset}',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.avghumidity}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                          ]),
+                          TableRow(children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '30/11',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.mintempC}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'Thu',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.maxtempC}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${apIprovider.weatherDataModal.forecast.forecastday[0].astro.sunrise}',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                        ]),
-                        TableRow(children: [
-                          Text(
-                            '30/11',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${apIprovider.weatherDataModal.forecast.forecastday[0].astro.sunset}',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            'Thursday',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                          ]),
+                          TableRow(children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '01/12',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.avghumidity}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'Fri',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.mintempC}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${apIprovider.weatherDataModal.forecast.forecastday[0].astro.sunrise}',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.maxtempC}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${apIprovider.weatherDataModal.forecast.forecastday[0].astro.sunset}',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                        ]),
-                        TableRow(children: [
-                          Text(
-                            '01/12',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                          ]),
+                          TableRow(children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '02/12',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            'Friday',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'Sat',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.avghumidity}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${apIprovider.weatherDataModal.forecast.forecastday[0].astro.sunrise}',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.mintempC}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${apIprovider.weatherDataModal.forecast.forecastday[0].astro.sunset}',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.maxtempC}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                          ]),
+                          TableRow(children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '03/11',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                        ]),
-                        TableRow(children: [
-                          Text(
-                            '02/12',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'Sun',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            'Saturday',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${apIprovider.weatherDataModal.forecast.forecastday[0].astro.sunrise}',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.avghumidity}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${apIprovider.weatherDataModal.forecast.forecastday[0].astro.sunrise}',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.mintempC}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                          ]),
+                          TableRow(children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '04/12',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.maxtempC}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'Monday',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                        ]),
-                        TableRow(children: [
-                          Text(
-                            '03/11',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${apIprovider.weatherDataModal.forecast.forecastday[0].astro.sunrise}',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            'Sunday',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${apIprovider.weatherDataModal.forecast.forecastday[0].astro.sunset}',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: themeModal.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.avghumidity}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
-                            ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.mintempC}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
-                            ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.maxtempC}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
-                            ),
-                          ),
-                        ]),
-                        TableRow(children: [
-                          Text(
-                            '04/12',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
-                            ),
-                          ),
-                          Text(
-                            'Monday',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
-                            ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.avghumidity}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
-                            ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.mintempC}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
-                            ),
-                          ),
-                          Text(
-                            '${apIprovider.weatherDataModal.forecast.forecastday[0].day.maxtempC}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: themeModal.isDark
-                                  ? Colors.white
-                                  : Colors.black,
-                            ),
-                          ),
-                        ]),
-                      ],
+                          ]),
+                        ],
+                      ),
                     ),
                   ],
                 );

@@ -47,7 +47,7 @@ class APIprovider extends ChangeNotifier {
 
   Future<void> Foruri() async {
     var url = Uri.parse(
-        'http://api.weatherapi.com/v1/current.json?key=a86fa895e3fe4a5ba9c31948232111&q=$a&aqi=no');
+        'http://api.weatherapi.com/v1/forecast.json?key=a86fa895e3fe4a5ba9c31948232111&q&q=$a&days=1&aqi=no&alerts=no');
     var response = await get(url);
 
     if (response.statusCode == 200) {
@@ -57,6 +57,9 @@ class APIprovider extends ChangeNotifier {
       Current current = Current.fromJson(jsonmap['current'] ?? {});
       Forecast forecast = Forecast.fromJson(jsonmap['forecast'] ?? {});
       notifyListeners();
+      print(forecast.forecastday);
+      print(forecast.forecastday[0].astro.sunset);
+
       _weatherDataModal = WeatherDataModal(
           location: location, current: current, forecast: forecast);
       notifyListeners();

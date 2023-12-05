@@ -86,10 +86,12 @@ class Homepagestate extends State<Homepage> {
         return Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,
-            title: Text('Weather App',
-            style: TextStyle(
-              color: themeModal.isDark ? Colors.white : Colors.black,
-            ),),
+            title: Text(
+              'Weather App',
+              style: TextStyle(
+                color: themeModal.isDark ? Colors.white : Colors.black,
+              ),
+            ),
             backgroundColor:
                 themeModal.isDark ? Color(0xffB06892) : Color(0xffbfcfd8),
             actions: [

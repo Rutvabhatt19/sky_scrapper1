@@ -37,8 +37,8 @@
 
 <table>
   <tr>
-    <td><img src="(https://github.com/Rutvabhatt19/sky_scrapper1/assets/118719070/c696569b-0676-48b8-bd2a-6d7f17e66a4d" alt="Weather Screen" width="250"></td>
-    <td><img src="https://github.com/Rutvabhatt19/sky_scrapper1/assets/118719070/b6f97e80-d980-40a2-986c-a47a7fd4ce5e" alt="Theme Customization" width="250"></td>
+   <td><img src="https://github.com/Rutvabhatt19/sky_scrapper1/assets/118719070/c696569b-0676-48b8-bd2a-6d7f17e66a4d" alt="Weather Screen" width="250"></td>
+   <td><img src="https://github.com/Rutvabhatt19/sky_scrapper1/assets/118719070/ec032a6d-d1ec-4489-aef3-f08c87c76f2e" alt="Theme Customization" width="250"></td>
     <td><img src="https://github.com/Rutvabhatt19/sky_scrapper1/assets/118719070/ec032a6d-d1ec-4489-aef3-f08c87c76f2e" alt="City Selection" width="250"></td>
   </tr>
   <tr>

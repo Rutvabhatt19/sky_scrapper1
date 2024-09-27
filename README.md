@@ -1,19 +1,50 @@
-# sky_scrapper
+<h1>Sky Scrapper</h1>
+    <p>A new Flutter project to view today's weather forecast.</p>
 
-A new Flutter project.
+    <h2>Getting Started</h2>
+    <p>This project is a starting point for a Flutter application.</p>
+    <p>A few resources to get you started if this is your first Flutter project:</p>
+    <ul>
+        <li><a href="https://docs.flutter.dev/get-started/codelab">Lab: Write your first Flutter app</a></li>
+        <li><a href="https://docs.flutter.dev/cookbook">Cookbook: Useful Flutter samples</a></li>
+    </ul>
+    <p>For help getting started with Flutter development, view the <a href="https://docs.flutter.dev/">online documentation</a>, which offers tutorials, samples, guidance on mobile development, and a full API reference.</p>
 
-## Getting Started
+    <h2>Features</h2>
+    <ul>
+        <li>🌤️ <strong>Weather Forecast:</strong> Displays current weather conditions fetched from an API.</li>
+        <li>🎨 <strong>Theme Customization:</strong> Users can customize the app's appearance to suit their preferences.</li>
+        <li>📍 <strong>City Storage:</strong> The selected city is saved locally using <code>SharedPreferences</code>, allowing for persistence across app sessions.</li>
+    </ul>
 
-This project is a starting point for a Flutter application.
+    <h2>Usage</h2>
+    <ol>
+        <li><strong>Weather Display:</strong> The app fetches and displays the weather forecast for the selected city.</li>
+        <li><strong>Customize Theme:</strong> Navigate to the settings to select and apply different themes.</li>
+        <li><strong>City Preference:</strong> The app saves your chosen city for future reference, even after closing the app.</li>
+    </ol>
 
-A few resources to get you started if this is your first Flutter project:
+    <h2>Technologies Used</h2>
+    <ul>
+        <li><strong>Flutter:</strong> The framework used for building the app.</li>
+        <li><strong>API Integration:</strong> Fetches live weather data via HTTP requests.</li>
+        <li><strong>Shared Preferences:</strong> Used to store user-selected cities locally.</li>
+        <li><strong>Responsive UI:</strong> Built using Flutter's Material Design principles.</li>
+    </ul>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    <h2>Screenshots</h2>
+    <table>
+        <tr>
+            <th>Weather Screen</th>
+            <th>Theme Customization</th>
+            <th>City Selection</th>
+        </tr>
+        <tr>
+            <td><img src="https://github.com/Rutvabhatt19/SkyScrapper/assets/118719070/0e32fa9b-836d-4f33-9107-0301fe646b2b" alt="Weather Screen"></td>
+            <td><img src="https://github.com/Rutvabhatt19/sky_scrapper1/assets/118719070/569a12d3-08ac-46de-9073-e14ac5a7b6f2" alt="Theme Customization"></td>
+            <td><img src="https://github.com/Rutvabhatt19/SkyScrapper/assets/118719070/b3bf487c-917f-42ec-ba10-65064bb6eac2" alt="City Selection"></td>
+        </tr>
+    </table>
 
 
 

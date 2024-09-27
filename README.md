@@ -1,50 +1,64 @@
-<h1>Sky Scrapper</h1>
-    <p>A new Flutter project to view today's weather forecast.</p>
 
-    <h2>Getting Started</h2>
-    <p>This project is a starting point for a Flutter application.</p>
-    <p>A few resources to get you started if this is your first Flutter project:</p>
-    <ul>
-        <li><a href="https://docs.flutter.dev/get-started/codelab">Lab: Write your first Flutter app</a></li>
-        <li><a href="https://docs.flutter.dev/cookbook">Cookbook: Useful Flutter samples</a></li>
-    </ul>
-    <p>For help getting started with Flutter development, view the <a href="https://docs.flutter.dev/">online documentation</a>, which offers tutorials, samples, guidance on mobile development, and a full API reference.</p>
+        
+    <h1>☁️ Sky Scrapper - Weather Forecast Application</h1>
 
-    <h2>Features</h2>
-    <ul>
-        <li>🌤️ <strong>Weather Forecast:</strong> Displays current weather conditions fetched from an API.</li>
-        <li>🎨 <strong>Theme Customization:</strong> Users can customize the app's appearance to suit their preferences.</li>
-        <li>📍 <strong>City Storage:</strong> The selected city is saved locally using <code>SharedPreferences</code>, allowing for persistence across app sessions.</li>
-    </ul>
+<p><strong>A Flutter app for viewing today's weather forecast and customizing themes.</strong></p>
 
-    <h2>Usage</h2>
-    <ol>
-        <li><strong>Weather Display:</strong> The app fetches and displays the weather forecast for the selected city.</li>
-        <li><strong>Customize Theme:</strong> Navigate to the settings to select and apply different themes.</li>
-        <li><strong>City Preference:</strong> The app saves your chosen city for future reference, even after closing the app.</li>
-    </ol>
+<img class="badge" src="https://img.shields.io/badge/Flutter-v2.0%2B-blue?style=flat&logo=flutter" alt="Flutter">
+<img class="badge" src="https://img.shields.io/badge/License-MIT-green" alt="License">
 
-    <h2>Technologies Used</h2>
-    <ul>
-        <li><strong>Flutter:</strong> The framework used for building the app.</li>
-        <li><strong>API Integration:</strong> Fetches live weather data via HTTP requests.</li>
-        <li><strong>Shared Preferences:</strong> Used to store user-selected cities locally.</li>
-        <li><strong>Responsive UI:</strong> Built using Flutter's Material Design principles.</li>
-    </ul>
+<hr>
 
-    <h2>Screenshots</h2>
-    <table>
-        <tr>
-            <th>Weather Screen</th>
-            <th>Theme Customization</th>
-            <th>City Selection</th>
-        </tr>
-        <tr>
-            <td><img src="https://github.com/Rutvabhatt19/SkyScrapper/assets/118719070/0e32fa9b-836d-4f33-9107-0301fe646b2b" alt="Weather Screen"></td>
-            <td><img src="https://github.com/Rutvabhatt19/sky_scrapper1/assets/118719070/569a12d3-08ac-46de-9073-e14ac5a7b6f2" alt="Theme Customization"></td>
-            <td><img src="https://github.com/Rutvabhatt19/SkyScrapper/assets/118719070/b3bf487c-917f-42ec-ba10-65064bb6eac2" alt="City Selection"></td>
-        </tr>
-    </table>
+<h2>🚀 Project Overview</h2>
+<p>The <strong>Sky Scrapper</strong> app allows users to view the current weather forecast fetched from an API. It includes theme customization options and saves the selected city using SharedPreferences, ensuring a smooth user experience.</p>
+
+<hr>
+
+<h2>✨ Features</h2>
+<ul>
+    <li>🌤️ <strong>Weather Forecast</strong>: Displays current weather conditions fetched from an API.</li>
+    <li>🎨 <strong>Customizable Themes</strong>: Users can change the app's appearance according to their preferences.</li>
+    <li>📍 <strong>City Storage</strong>: The selected city is saved locally using SharedPreferences.</li>
+</ul>
+
+<hr>
+
+<h2>🎯 Usage</h2>
+<p>To use the app:</p>
+<ol>
+    <li><strong>Select a City</strong>: Choose your desired city to view the weather forecast.</li>
+    <li><strong>Customize</strong>: Change the app's theme to fit your style.</li>
+    <li><strong>Check Weather</strong>: View the current weather conditions and forecast.</li>
+</ol>
+
+<hr>
+
+<h2>📱 Screenshots</h2>
+<p>Here’s a preview of the user interface:</p>
+
+<table>
+  <tr>
+    <td><img src="https://github.com/Rutvabhatt19/SkyScrapper/assets/118719070/0e32fa9b-836d-4f33-9107-0301fe646b2b" alt="Weather Screen" width="250"></td>
+    <td><img src="https://github.com/Rutvabhatt19/sky_scrapper1/assets/118719070/b6f97e80-d980-40a2-986c-a47a7fd4ce5e" alt="Theme Customization" width="250"></td>
+    <td><img src="https://github.com/Rutvabhatt19/sky_scrapper1/assets/118719070/ec032a6d-d1ec-4489-aef3-f08c87c76f2e" alt="City Selection" width="250"></td>
+  </tr>
+  <tr>
+    <td align="center">Weather Screen</td>
+    <td align="center">Theme Customization</td>
+    <td align="center">City Selection</td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>🛠️ Technologies Used</h2>
+<ul>
+    <li><strong>Flutter</strong>: Cross-platform app development framework.</li>
+    <li><strong>API Integration</strong>: Fetches live weather data via HTTP requests.</li>
+    <li><strong>SharedPreferences</strong>: Used to store user-selected cities locally.</li>
+</ul>
+
+<hr>
 
 
 

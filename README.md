@@ -1,6 +1,5 @@
 
-        
-    <h1>☁️ Sky Scrapper - Weather Forecast Application</h1>
+ <h1>☁️ Sky Scrapper - Weather Forecast Application</h1>
 
 <p><strong>A Flutter app for viewing today's weather forecast and customizing themes.</strong></p>
 

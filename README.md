@@ -4,7 +4,7 @@
 <p><strong>A Flutter app for viewing today's weather forecast and customizing themes.</strong></p>
 
 <img class="badge" src="https://img.shields.io/badge/Flutter-v2.0%2B-blue?style=flat&logo=flutter" alt="Flutter">
-<img class="badge" src="https://img.shields.io/badge/License-MIT-green" alt="License">
+
 
 <hr>
 
@@ -37,7 +37,7 @@
 
 <table>
   <tr>
-    <td><img src="https://github.com/Rutvabhatt19/SkyScrapper/assets/118719070/0e32fa9b-836d-4f33-9107-0301fe646b2b" alt="Weather Screen" width="250"></td>
+    <td><img src="(https://github.com/Rutvabhatt19/sky_scrapper1/assets/118719070/c696569b-0676-48b8-bd2a-6d7f17e66a4d" alt="Weather Screen" width="250"></td>
     <td><img src="https://github.com/Rutvabhatt19/sky_scrapper1/assets/118719070/b6f97e80-d980-40a2-986c-a47a7fd4ce5e" alt="Theme Customization" width="250"></td>
     <td><img src="https://github.com/Rutvabhatt19/sky_scrapper1/assets/118719070/ec032a6d-d1ec-4489-aef3-f08c87c76f2e" alt="City Selection" width="250"></td>
   </tr>
